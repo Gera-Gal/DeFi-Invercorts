@@ -34,7 +34,6 @@ contract InvestContract {
         bytes32 hash = keccak256(abi.encodePacked(msg.sender,receiver,_amount));
         availablePayments[hash]=Payment(_amount,msg.sender,receiver,false);
         emit PaymentSent(hash);
-        balanceOf[receiver] += _amount;
         return hash;
     }
 
